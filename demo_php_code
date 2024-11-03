@@ -1,0 +1,62 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $hallTicketNumber = $_POST['hallTicketNumber'];
+    // Example PDF path based on hall ticket number
+    $pdfPath = "pdfs/" . htmlspecialchars($hallTicketNumber) . ".pdf"; // Assuming PDFs are named by ticket number
+
+    // Simulate result retrieval
+    $result = "Result for Hall Ticket Number " . htmlspecialchars($hallTicketNumber);
+    ?>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Results</title>
+    </head>
+    <body>
+        <h1>Results</h1>
+        <p><?php echo $result; ?></p>
+        
+        <!-- Link to PDF -->
+        <a href="<?php echo $pdfPath; ?>" target="_blank">Download/View your Result PDF</a>
+        <br>
+        
+        <a href="index.html">Go Back</a>
+    </body>
+    </html>
+    
+    <?php
+}
+?>
+  <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $hallTicketNumber = $_POST['hallTicketNumber'];
+    // Example image path based on hall ticket number
+    $imagePath = "images/" . htmlspecialchars($hallTicketNumber) . ".jpg"; // Assuming images are named by ticket number
+
+    // Simulate result retrieval
+    $result = "Result for Hall Ticket Number " . htmlspecialchars($hallTicketNumber);
+    ?>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Results</title>
+    </head>
+    <body>
+        <h1>Results</h1>
+        <p><?php echo $result; ?></p>
+        <img src="<?php echo $imagePath; ?>" alt="Result Image" style="max-width: 100%; height: auto;">
+        <br>
+        <a href="index.html">Go Back</a>
+    </body>
+    </html>
+    
+    <?php
+}
+?>
+
