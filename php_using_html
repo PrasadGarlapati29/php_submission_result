@@ -1,0 +1,85 @@
+<?php
+// Check if the form was submitted
+//if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve the hall ticket number from the form
+    //$hall_ticket = htmlspecialchars($_POST['hall_ticket']);
+
+    // Example data for the hall ticket (static for now)
+    $marks = [
+        ['Software Engineering', 38, 46, 84, 'P'],
+        ['Python Programming', 37, 49, 86, 'P'],
+        ['Computer Networks', 38, 41, 79, 'P'],
+        ['Web Technologies', 28, 41, 69, 'P'],
+        ['Artificial Intelligence', 26, 30, 56, 'P'],
+        ['Python Programming Lab', 38, 58, 96, 'P'],
+        ['Web Technologies Lab', 29, 47, 76, 'P'],
+        ['Seminar', 50, 0, 50, 'P'],
+        ['Life Skills', '-', 78, 78, 'P']
+    ];
+
+    $total_marks = '674 / 850';
+    $percentage = '79.29';
+    $result = 'Pass';
+    $sgpa = '7.89';
+
+    // Now, let's generate the HTML to display the result
+    ?>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Marks Result</title>
+        <style>
+            table { width: 600px; border: 1px solid #000; cellpadding: 4; cellspacing: 0; }
+            .styleTitleRow { background-color: #f2f2f2; }
+            .style2 { background-color: #f9f9f9; }
+            td { padding: 8px; text-align: left; }
+            u { text-decoration: underline; }
+        </style>
+    </head>
+    <body>
+
+  
+
+    <table>
+        <tr class="styleTitleRow">
+            <td width="350"><u>Paper Title / Code</u></td>
+            <td><u>CA</u></td>
+            <td><u>SEE</u></td>
+            <td><u>TOT</u></td>
+            <td><u>P/F</u></td>
+        </tr>
+
+        <?php foreach ($marks as $mark): ?>
+        <tr class="style2">
+            <td><?php echo $mark[0]; ?></td>
+            <td><?php echo $mark[1]; ?></td>
+            <td><?php echo $mark[2]; ?></td>
+            <td><?php echo $mark[3]; ?></td>
+            <td><?php echo $mark[4]; ?></td>
+        </tr>
+        <?php endforeach; ?>
+
+        <tr class="style2">
+            <td align="right">Total Marks:</td>
+            <td colspan="4"><?php echo $total_marks; ?></td>
+        </tr>
+        <tr class="style2">
+            <td align="right">Aggregate Percentage:</td>
+            <td colspan="4"><?php echo $percentage; ?></td>
+        </tr>
+        <tr class="style2">
+            <td align="right">Result:</td>
+            <td colspan="4"><?php echo $result; ?></td>
+        </tr>
+        <tr class="style2">
+            <td align="right">SGPA:</td>
+            <td colspan="4"><?php echo $sgpa; ?></td>
+        </tr>
+    </table>
+
+    </body>
+    </html>
+
